@@ -1,0 +1,197 @@
+<T3DataStructure>
+    <sheets>
+        <settings>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.baseWeatherUrl>
+                        <TCEforms>
+                            <label>Base API URL</label>
+                            <config>
+                                <type>input</type>
+                                <readOnly>1</readOnly>
+                                <default>http://api.openweathermap.org/data/2.5/</default>
+                                <eval>url</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.baseWeatherUrl>
+<!--
+                    <settings.baseImgUrl>
+                        <TCEforms>
+                            <label>Image url</label>
+                            <config>
+                                <type>input</type>
+                                <readOnly>1</readOnly>
+                                <default>http://openweathermap.org/img/w/</default>
+                                <eval>url</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.baseImgUrl>
+-->
+                    <settings.apiName>
+                        <TCEforms>
+                            <label>Select the widget type</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">weather</numIndex>
+                                        <numIndex index="1">weather</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">3-hourly forecast</numIndex>
+                                        <numIndex index="1">forecast</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">daily forecast</numIndex>
+                                        <numIndex index="1">forecast___daily</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">both</numIndex>
+                                        <numIndex index="1">both</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.apiName>
+                    <settings.city>
+                        <TCEforms>
+                            <label>Enter a city name</label>
+                            <config>
+                                <type>input</type>
+                                <size>50</size>
+                                <max>50</max>
+                                <default>frankfurt</default>
+                            </config>
+                        </TCEforms>
+                    </settings.city>
+                    <settings.country>
+                        <TCEforms>
+                            <label>Enter a country name or an ISO country code (e.g. London or UK or GB)</label>
+                            <config>
+                                <type>input</type>
+                                <size>50</size>
+                                <max>50</max>
+                                <default>germany</default>
+                            </config>
+                        </TCEforms>
+                    </settings.country>
+                    <settings.units>
+                        <TCEforms>
+                            <label>Select the unit of measurement</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">metric</numIndex>
+                                        <numIndex index="1">metric</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">imperial</numIndex>
+                                        <numIndex index="1">imperial</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">internal</numIndex>
+                                        <numIndex index="1">internal</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.units>
+<!--
+                    <settings.type>
+                        <TCEforms>
+                            <label>Set the type of the request</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">accurate</numIndex>
+                                        <numIndex index="1">accurate</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">like</numIndex>
+                                        <numIndex index="1">like</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.type>
+-->
+                    <settings.cnt>
+                        <TCEforms>
+                            <label>Set the amount of days for weather forecast </label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">1</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">2</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">3</numIndex>
+                                        <numIndex index="1">3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">4</numIndex>
+                                        <numIndex index="1">4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">5</numIndex>
+                                        <numIndex index="1">5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">6</numIndex>
+                                        <numIndex index="1">6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">7</numIndex>
+                                        <numIndex index="1">7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8</numIndex>
+                                        <numIndex index="1">8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">9</numIndex>
+                                        <numIndex index="1">9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">10</numIndex>
+                                        <numIndex index="1">10</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.cnt>
+                </el>
+            </ROOT>
+        </settings>
+        <theme>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Theme</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.theme>
+                        <TCEforms>
+                            <label>Choose a theme</label>
+                            <config>
+                                    <type>select</type>
+                                    <itemsProcFunc>AddFieldsToFlexForm->addFields</itemsProcFunc>
+                                </config>
+                        </TCEforms>
+                    </settings.theme>
+                </el>
+            </ROOT>
+        </theme>
+    </sheets>
+</T3DataStructure>

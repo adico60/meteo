@@ -1,0 +1,27 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+    <h3>Weather Dashboard - Generate css from icons</h3>
+
+    <p>
+        generate the /css/icons.css file that holds the css rules for all available icons under /icons/
+    </p>
+    <form action="" method="post">
+        <input type="hidden" value="true" name="generateCss" />
+        <input type="submit" value="Go !" />
+    </form>
+
+    <f:if condition="<f:count subject='{aFilesGenerated}' /> > 0">
+        <h4>Files generated </h4>
+        <ul>
+            <f:for each="{aFilesGenerated}" as="file">
+                <li>
+                    {file.message}
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+
+    <f:link.action action="list">back to list</f:link.action>
+
+</f:section>

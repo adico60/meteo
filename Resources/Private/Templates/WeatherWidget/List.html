@@ -1,0 +1,62 @@
+{namespace helper=Alexweb\AwWeather\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <f:flashMessages />
+
+    <helper:addPublicResources theme="{settings.theme}" />
+
+    <div class="{settings.theme}">
+
+        <f:if condition="{0:apiName} == {0:'weather'}">
+            <div class="weather">
+                City : {response.name}<br />
+                Country : {response.sys.country}<br />
+                Temperature {response.main.temp}<br />
+                Weather : {response.weather.description}<br />
+
+                <span class="icons icon_{response.weather.id}">&nbsp;</span>
+            </div>
+        </f:if>
+
+        <f:if condition="{0:apiName} == {0:'forecast'}">
+            <div class="forecast">
+                City : {response.city.name}<br />
+                Country : {response.city.country}<br />
+
+                <f:for each="{response.list}" as="item">
+                    Temperature {item.main.temp}<br />
+                    Weather : {item.weather.description}<br />
+                    <span class="icons icon_{item.weather.id}">&nbsp;</span>
+                </f:for>
+            </div>
+        </f:if>
+
+        <f:if condition="{0:apiName} == {0:'forecast___daily'}">
+            <div class="forecast_daily">
+                City : {response.city.name}<br />
+                Country : {response.city.country}<br />
+
+                <f:for each="{response.list}" as="item">
+                    <div class="days floatLeft">
+                        <h4>{item.day}</h4>
+                        <h5>{item.date}  {item.month}</h5>
+                        <p>
+                            <span class="icons icon_{item.weather.id}">&nbsp;</span>
+                        </p>
+                        <p>
+                            Low temp {item.temp.day}  High temp {item.temp.night}
+                        </p>
+                        <p>
+                            Weather : {item.weather.description}
+                        </p>
+                    </div>
+                </f:for>
+                <div class="stretcher"></div>
+            </div>
+        </f:if>
+
+    </div>
+
+</f:section>

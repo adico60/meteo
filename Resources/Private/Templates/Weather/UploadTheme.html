@@ -1,0 +1,79 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+    <h3>Weather Dashboard - Upload Custom Theme</h3>
+    <form enctype="multipart/form-data" method="post" action="">
+        <h4>Step 1</h4>
+        <p>
+            <label>Choose a zip file to upload:</label>
+            <input type="file" name="files" />
+        </p>
+<!--
+        <p>
+            <label>
+                Generate CSS file /theme_name/css/icons.css ? <br />
+                Use this option only you have created your own icons but not the icons.css file and have included a /theme_name/js/weatherCodes.json
+            </label>
+            <br />
+            <input type="checkbox" name="generateCss" />
+        </p>
+        <p>
+            <label>
+                Download default images from openweathermap.org ? <br />
+                Use this option if you haven't created your own icons and would like to use the ones from the <a href="http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes">openweathermap</a>
+                Files under /theme_name/icons with the same names will be overwritten !
+            </label>
+            <br />
+            <input type="checkbox" name="getDefaultImages" />
+        </p>
+-->
+        <input type="submit" name="submit" value="Upload" />
+    </form>
+
+    <f:if condition="<f:count subject='{error_messages}' /> > 0">
+        <f:then>
+            <h4>The following errors occurred</h4>
+            <ul>
+                <f:for each="{error_messages}" as="error">
+                    <li>
+                        {error.message}
+                    </li>
+                </f:for>
+            </ul>
+        </f:then>
+    </f:if>
+
+    <f:if condition="{isUploaded}">
+        <h4>Theme was uploaded successfully</h4>
+
+        <f:if condition="<f:count subject='{aFilesGenerated}' /> > 0">
+            <h4>Files generated </h4>
+            <ul>
+                <f:for each="{aFilesGenerated}" as="file">
+                    <li>
+                        {file.message}
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+
+        <f:if condition="<f:count subject='{images}' /> > 0">
+            <h4>Images Downloaded</h4>
+            <ul>
+                <f:for each="{images}" as="image">
+                    <li>
+                        {image.icon}
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+
+        <h4>Step 2</h4>
+        <f:link.action action="generateJson">Match icons to weather codes </f:link.action>
+    </f:if>
+
+    <br />
+    <br />
+    <br />
+    <f:link.action action="list"><< back to list</f:link.action>
+</f:section>
